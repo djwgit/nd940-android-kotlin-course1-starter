@@ -11,6 +11,7 @@ class AppViewModel: ViewModel() {
     val shoes: LiveData<MutableList<Shoe>>
         get() = _shoes
 
+    // data from amazon.com
     init {
         _shoes.value = mutableListOf(
             Shoe("Women's Fluff Yeah Slide Slipper",
@@ -40,6 +41,7 @@ class AppViewModel: ViewModel() {
         )
     }
 
+    // add a new shoe to list
     fun addToShoes(shoe:Shoe){
         _shoes.value?.add(shoe)
     }

@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             this,
             R.layout.activity_main)
 
+        // toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)

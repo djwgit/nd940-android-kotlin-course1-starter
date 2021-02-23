@@ -39,6 +39,7 @@ class ShoeListFragment : Fragment() {
         // show overflow menu
         setHasOptionsMenu(true)
 
+        // https://stackoverflow.com/questions/2395769/how-to-programmatically-add-views-to-views
         // shoes list observer
         binding.lifecycleOwner = this
         viewModel.shoes.observe(this.viewLifecycleOwner, Observer{
