@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
@@ -38,12 +39,16 @@ class DetailFragment : Fragment() {
 
         binding.addShoeButton.setOnClickListener{
             val name = binding.newShoeName.text.toString()
-            val size = binding.newShoeSize.text.toString().toDouble()
+            val size  =  if(binding.newShoeSize.text.toString() == "") 0.0 else binding.newShoeSize.text.toString().toDouble()
             val company = binding.newShoeCompany.text.toString()
             val description = binding.newShoeDescription.text.toString()
-            viewModel.addToShoes(Shoe(name, size, company, description, mutableListOf("url") ))
 
-            findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToShoeListFragment())
+            if (name == "" || size == 0.0 || company == "" || description == "") {
+                Toast.makeText(context,"invalid shoe info !",Toast.LENGTH_SHORT).show()
+            } else {
+                viewModel.addToShoes(Shoe(name, size, company, description, mutableListOf("url")))
+                findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToShoeListFragment())
+            }
         }
 
         return binding.root

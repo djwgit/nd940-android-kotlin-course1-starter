@@ -70,12 +70,14 @@
                 android:id="@+id/login_signup_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/design_default_color_on_secondary"
                 android:text="Sign up" />
 
             <Button
                 android:id="@+id/login_login_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
                 android:text="Log in" />
         </LinearLayout>
     </LinearLayout>

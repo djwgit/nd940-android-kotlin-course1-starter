@@ -1,10 +1,8 @@
 package com.udacity.shoestore.view
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
@@ -33,10 +31,15 @@ class ShoeListFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
 
+        // fab listener
         binding.fab.setOnClickListener{
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToDetailFragment())
         }
 
+        // show overflow menu
+        setHasOptionsMenu(true)
+
+        // shoes list observer
         binding.lifecycleOwner = this
         viewModel.shoes.observe(this.viewLifecycleOwner, Observer{
             val outerLinearlayout = binding.shoesLinearlayout
@@ -57,6 +60,17 @@ class ShoeListFragment : Fragment() {
         })
 
         return binding.root
+    }
+
+    // overflow menu
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.overflow_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onStart() {
