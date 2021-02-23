@@ -14,24 +14,24 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="20px"
-            android:text="Welcome to Shoe Store"
-            android:textSize="45px"
+            android:paddingBottom="20dp"
+            android:text="@string/welcome_to_shoe_store"
+            android:textSize="25sp"
             android:gravity="center"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="continue to read the instructions"
+            android:text="@string/continue_to_read_the_instructions"
             android:gravity="center"
-            android:paddingBottom="220px"/>
+            android:paddingBottom="220dp"/>
 
         <Button
             android:id="@+id/instructions_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/background_light"
-            android:text="View Instructions" />
+            android:text="@string/view_instructions" />
 
     </LinearLayout>
 </layout>

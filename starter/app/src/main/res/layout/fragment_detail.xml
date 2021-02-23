@@ -16,8 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="New Shoe:"
-            android:textSize="15dp"
+            android:text="@string/new_shoe"
+            android:textSize="15sp"
             android:textColor="@color/colorPrimary" />
 
         <GridLayout
@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="name" />
+                android:text="@string/name" />
 
             <EditText
                 android:id="@+id/new_shoe_name"
@@ -40,7 +40,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="company" />
+                android:text="@string/company" />
 
             <EditText
                 android:id="@+id/new_shoe_company"
@@ -50,7 +50,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="size" />
+                android:text="@string/size" />
 
             <EditText
                 android:id="@+id/new_shoe_size"
@@ -60,7 +60,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="description" />
+                android:text="@string/description" />
 
             <EditText
                 android:id="@+id/new_shoe_description"
@@ -79,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Cancel" />
+                android:text="@string/cancel" />
 
             <Button
                 android:id="@+id/add_shoe_button"
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textColor="@color/colorPrimary"
-                android:text="add" />
+                android:text="@string/add" />
         </LinearLayout>
 
     </LinearLayout>

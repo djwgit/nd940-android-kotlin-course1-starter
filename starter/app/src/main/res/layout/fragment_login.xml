@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.LoginFragment">
 
@@ -14,24 +13,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingBottom="100px"
-            android:text="Log in"
+            android:paddingBottom="20dp"
+            android:text="@string/log_in"
             android:textAllCaps="true"
             android:textColor="@color/colorPrimary"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
-            android:paddingLeft="200px"
-            android:paddingRight="200px">
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
 
             <TextView
-                android:layout_width="200px"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="username:" />
+                android:text="@string/username" />
 
             <EditText
                 android:id="@+id/login_user"
@@ -44,14 +43,14 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
-            android:paddingLeft="200px"
-            android:paddingRight="200px"
-            android:paddingBottom="100px">
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp">
 
             <TextView
-                android:layout_width="200px"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="password:" />
+                android:text="@string/password" />
 
             <EditText
                 android:id="@+id/login_password"
@@ -71,14 +70,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/design_default_color_on_secondary"
-                android:text="Sign up" />
+                android:text="@string/sign_up" />
 
             <Button
                 android:id="@+id/login_login_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimary"
-                android:text="Log in" />
+                android:text="@string/log_in" />
         </LinearLayout>
     </LinearLayout>
 
