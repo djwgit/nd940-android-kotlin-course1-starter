@@ -49,10 +49,8 @@ class ShoeListFragment : Fragment() {
                         outerLinearlayout,
                         false
                     )
-                    listBinding.shoeName.setText(shoe.name)
-                    listBinding.shoeCompany.setText(shoe.company)
-                    listBinding.shoeSize.setText(shoe.size.toString())
-                    listBinding.shoeDescription.setText(shoe.description)
+
+                    listBinding.shoe = shoe
                     outerLinearlayout.addView(listBinding.root)
                 }
             }

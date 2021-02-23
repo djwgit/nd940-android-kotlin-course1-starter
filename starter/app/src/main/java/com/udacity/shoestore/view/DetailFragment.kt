@@ -37,12 +37,11 @@ class DetailFragment : Fragment() {
         }
 
         binding.addShoeButton.setOnClickListener{
-            val shoes = viewModel.shoes.value
             val name = binding.newShoeName.text.toString()
             val size = binding.newShoeSize.text.toString().toDouble()
             val company = binding.newShoeCompany.text.toString()
             val description = binding.newShoeDescription.text.toString()
-            shoes?.add( Shoe(name, size, company, description, mutableListOf("url") ))
+            viewModel.addToShoes(Shoe(name, size, company, description, mutableListOf("url") ))
 
             findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToShoeListFragment())
         }
