@@ -1,21 +1,17 @@
-package com.udacity.shoestore.login
+package com.udacity.shoestore.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [LoginFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class LoginFragment : Fragment() {
 
     private lateinit var binding:FragmentLoginBinding
@@ -30,7 +26,8 @@ class LoginFragment : Fragment() {
     ): View? {
 
         binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_login, container, false)
+            inflater, R.layout.fragment_login, container, false
+        )
 
         binding.loginLoginButton.setOnClickListener{
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
@@ -40,13 +37,12 @@ class LoginFragment : Fragment() {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
         }
 
-        getActivity()?.getActionBar()?.setTitle("Log in")
-
         return binding.root
     }
 
-    override fun onResume() {
-        super.onResume()
-        activity?.title = "Login"
+    override fun onStart() {
+        super.onStart()
+        (activity as? AppCompatActivity)?.supportActionBar?.title = "Login"
     }
+
 }
