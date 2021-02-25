@@ -19,4 +19,8 @@
     <string name="welcome_to_shoe_store">Welcome to Shoe Store</string>
     <string name="continue_to_read_the_instructions">continue to read the instructions</string>
     <string name="view_instructions">View Instructions</string>
+    <string name="enter_shoe_name">enter shoe name</string>
+    <string name="enter_shoe_company">enter shoe company</string>
+    <string name="enter_shoe_description">enter shoe description</string>
+    <string name="enter_shoe_size">enter shoe size</string>
 </resources>

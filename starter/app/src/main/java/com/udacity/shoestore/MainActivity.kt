@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
 
+        // the app viewmodel shared cross fragments
         viewModel = ViewModelProvider(this).get(AppViewModel::class.java)
     }
 

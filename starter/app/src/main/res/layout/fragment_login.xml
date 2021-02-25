@@ -1,84 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.LoginFragment">
 
-    <LinearLayout
+    <!-- use ConstraintLayout to avoid nested viewgroups -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:gravity="center">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/textView_login"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
             android:gravity="center"
             android:paddingBottom="20dp"
             android:text="@string/log_in"
             android:textAllCaps="true"
             android:textColor="@color/colorPrimary"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <TextView
+            android:id="@+id/textView_username"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp">
+            android:layout_marginStart="20dp"
+            android:text="@string/username"
+            android:textAlignment="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/login_user"
+            app:layout_constraintEnd_toStartOf="@+id/login_user"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:text="@string/username" />
-
-            <EditText
-                android:id="@+id/login_user"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/login_user"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="10dp">
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_username"
+            app:layout_constraintTop_toBottomOf="@+id/textView_login" />
 
-            <TextView
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:text="@string/password" />
 
-            <EditText
-                android:id="@+id/login_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textView_password"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:layout_marginStart="20dp"
+            android:text="@string/password"
+            android:textAlignment="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/login_password"
+            app:layout_constraintEnd_toStartOf="@+id/login_password"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                android:id="@+id/login_signup_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/design_default_color_on_secondary"
-                android:text="@string/sign_up" />
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_password"
+            app:layout_constraintTop_toBottomOf="@+id/login_user" />
 
-            <Button
-                android:id="@+id/login_login_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimary"
-                android:text="@string/log_in" />
-        </LinearLayout>
-    </LinearLayout>
+
+        <Button
+            android:id="@+id/login_signup_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/sign_up"
+            android:textColor="@color/design_default_color_on_secondary"
+            app:layout_constraintEnd_toStartOf="@+id/login_login_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_password" />
+
+        <Button
+            android:id="@+id/login_login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/log_in"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBaseline_toBaselineOf="@+id/login_signup_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/login_signup_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
