@@ -5,6 +5,7 @@
     tools:context=".DetailFragment">
 
     <data>
+        <import type="com.udacity.shoestore.view.Converter"  />
         <variable
             name="shoe"
             type="com.udacity.shoestore.models.Shoe" />
@@ -32,7 +33,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <TextView
             android:id="@+id/textView2"
@@ -93,11 +93,12 @@
 
         <!--
          bind double to EditText, tricks from here: https://stackoverflow.com/questions/39445482/two-way-data-binding-with-double-value-in-edittext
-         or could use converter or bindingAdapter
+         android:text="@={`` + shoe.size}"
+         or could use converter below or bindingAdapter
          -->
         <EditText
             android:id="@+id/new_shoe_size"
-            android:text="@={`` + shoe.size}"
+            android:text="@={Converter.doubleToString(shoe.size)}"
             android:hint="@string/enter_shoe_size"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
